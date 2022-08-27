@@ -6,6 +6,7 @@ const cardText = document.querySelector('.card__text');
 const buttonText = document.querySelector('.header__button-change_text');
 const buttonImage = document.querySelector('.header__button-change_image');
 const root = document.documentElement;
+// const textHappyBirthday = document.querySelector('.text__happyBirthday');
 
 const state = {
     gender: body.classList.contains('women') ? 'women' : 'men'
@@ -31,8 +32,10 @@ const getData = () => {
 const changeDOM = () => {
     if (state.photo.includes('black')) {
         cardText.style.color = 'white';
+        // textHappyBirthday.style.color = 'white';
     } else {
         cardText.style.color = '';
+        // textHappyBirthday.style.color = '';
     }
 
     cardImage.src = `img/${state.photo}`;
@@ -43,6 +46,8 @@ const getDataToCard = () => {
     getData().then(data => {
         state.text = getRandomForArr(data.text[state.gender]);
         state.photo = getRandomForArr(data.photo[state.gender]);
+        // state.happyBirthday = getRandomForArr(data.happyBirthday[state.gender]);
+        state.happyBirthday = getRandomForArr(data.happyBirthday.women.phase_1);
         changeDOM();
     })
 }
@@ -92,6 +97,24 @@ btnUserColor.onclick = () => {
     }
 
 }
+
+
+
+
+btnG.onclick = () => {
+    getData().then(data => {
+        state.text = 'Дорогая ' + `${textName.value}` + ', ' + getRandomForArr(data.happyBirthday.women.phase_1) + ' ' + getRandomForArr(data.happyBirthday.women.phase_2) + ' ' + getRandomForArr(data.happyBirthday.women.phase_3) + ' ' + getRandomForArr(data.happyBirthday.women.phase_4);
+        cardText.innerHTML = state.text.replaceAll('\n', '<br>');
+        // textHappyBirthday.innerHTML = state.happyBirthday.replaceAll('\n', '<br>');
+    })
+    // state.happyBirthday = getRandomForArr(data.happyBirthday.women.phase_1);
+    // textHappyBirthday.innerHTML = state.happyBirthday;
+    // textHappyBirthday.textContent = `${textName.value} + `
+}
+
+// setInterval(() => {
+//     textHappyBirthday.textContent = textName.value;
+// }, 50);
 
 getDataToCard();
 

@@ -167,12 +167,16 @@ ul {
 
 .card__container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card__wrapper {
     position: relative;
     margin: auto;
     display: flex;
+    flex-direction: column;
     box-shadow: 0px 0px 50px rgba(96, 4, 50, 0.23);
     font-size: 3px;
 }
@@ -184,6 +188,7 @@ ul {
     transform: translate(-50%, -50%);
     font-size: max(3em, min(calc(100vw * 3 / (840 / 3 / 2)), 6em));
     line-height: 1.6;
+    text-align: center;
 }
 
 .women .card__text {
@@ -236,7 +241,7 @@ ul {
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 .men .button-change_image_fon {
@@ -247,11 +252,95 @@ ul {
     background-color: var(--color-women);;
 }
 
-.user__color {
-    margin-right: 20px;
+.user__color__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
-@media (max-width: 880px) {
+.user__color {
+    /* margin-right: 10px;  */
+    /* padding-top: 5px; */
+    /* box-sizing: border-box
+    border: none;
+    border-radius: 50%;
+    overflow: hidden; */
+}
+
+
+.user__color {
+    -webkit-appearance: none;
+    border: none;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+
+  /* -webkit */
+.user__color::-webkit-color-swatch-wrapper {
+    padding: 0;    
+}
+
+.user__color::-webkit-color-swatch {
+    border: none;  
+    border-radius: 50%;
+}
+
+.wrapper__name {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button__generator {
+    border-radius: 10px;
+    background-color: var(--color-women);
+    color: #FFF1F8;
+    width: 280px;
+}
+
+.wrapper__name {
+    display: flex;
+    align-items: center;
+}
+
+.men .wrapper__name {
+    font-size: 0px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.area__name:focus{
+    filter: brightness(0.9);
+}
+
+.text__happyBirthday {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    font-size: max(3em, min(calc(100vw * 2 / (840 / 3 / 2)), 6em));
+    line-height: 1.6;
+    max-width: 350px;
+    height: auto;
+    text-align: center;
+}
+
+.women .text__happyBirthday {
+    font-family: 'Bad Script';
+}
+
+.men .text__happyBirthday {
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+@media (max-width: 1150px) {
     .container {
         padding: 0 10px;
     }
@@ -259,8 +348,9 @@ ul {
     .header__button-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
     }
+    
 
     .header__button-change{
         width: 220px;
@@ -275,6 +365,19 @@ ul {
         background-size: 30px;
         margin-right: 0;
     }
+    .user__color__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .button-change_image_fon {
+        font-size: 14px;
+        width: 150px;
+    }
+    /* .user__color {
+        width: 40px;
+    } */
 }
 
 @media (max-width: 400px) {
@@ -285,6 +388,14 @@ ul {
     .footer__contacts {
         order: 1;
     }
+    /* .user__color__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user__color {
+        width: 60px;
+    } */
 }
 
 /* .footer {
